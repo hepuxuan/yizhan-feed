@@ -1,0 +1,35 @@
+<div class="feeds">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="//59.110.141.38:3000">意栈网</a></li>
+    <li class="breadcrumb-item active">Show Case</li>
+  </ol>
+  <div class="row">
+    <div class="col-lg-8">
+      <ul class="list-unstyled">
+        {{#each feeds}}
+          <li class="card-item">
+            <a href="/feed/{{this.id}}">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">
+                    {{this.title}}
+                  </h6>
+                  <div class="image-grid image-grid-{{this.images.length}}">
+                    {{#each this.images}}
+                      <img class="card-img-top" src="{{this.url}}" alt="Card image cap">
+                    {{/each}}
+                  </div>
+                  <pre class="text-secondary feed-content">{{{this.content}}}</pre>
+                </div>
+               </div>
+            </a>
+           </li>
+         {{/each}}
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      {{> recommendedArticles}}
+    </div>
+  </div>
+
+</div>

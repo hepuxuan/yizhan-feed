@@ -1,0 +1,13 @@
+.recommended {
+  position: sticky;
+  top: 92px;
+
+  .card-image {
+    height: 75px;
+    background: url("") no-repeat scroll center;
+    background-size: auto 100%;
+  }
+  .recommended-lisrt li {
+    margin-bottom: 1rem;
+  }
+}

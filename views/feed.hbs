@@ -1,0 +1,36 @@
+<div class="feed">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="//59.110.141.38:3000">意栈网</a></li>
+    <li class="breadcrumb-item"><a href="/">Show Case</a></li>
+    <li class="breadcrumb-item active">{{feed.title}}</li>
+  </ol>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="author-info text-muted">
+            xxx 发布
+            <button type="button" class="btn btn-light btn-sm dropdown-toggle share-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              分享
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">朋友圈</a>
+              <a class="dropdown-item" href="#">微博</a>
+            </div>
+          </div>
+          <h5 class="card-title">{{feed.title}}</h5>
+          <div class="card-subtitle text-muted release-time">发布时间：{{feed.createdAt}}</div>
+          <div class="image-grid image-grid-{{feed.images.length}}">
+            {{#each feed.images}}
+              <img class="card-img-top" src="{{this.url}}" alt="Card image cap">
+            {{/each}}
+          </div>
+          <pre class="text-secondary feed-content">{{{feed.content}}}</pre>
+        </div>
+       </div>
+    </div>
+    <div class="col-lg-4 sticky-top">
+      {{> recommendedArticles}}
+    </div>
+  </div>
+</div>
